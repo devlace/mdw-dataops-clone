@@ -6,6 +6,7 @@ name: CI
 # events but only for the master branch
 on:
   repository_dispatch:
+    types: [on-demand-test]
   push:
     branches: [ lace/github-actions ]
   pull_request:
