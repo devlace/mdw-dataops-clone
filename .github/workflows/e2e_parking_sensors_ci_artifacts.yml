@@ -34,7 +34,7 @@ jobs:
     - name: Create wheel package
       working-directory: ${{ env.working-directory }}
       env:
-        PACKAGE_VERSION: $(python-package-major-version).$(python-package-minor-version).$(python-package-patch-version)
+        PACKAGE_VERSION: ${{ python-package-major-version }}.${{ python-package-minor-version }}.${{ python-package-patch-version }}
       run: make dist
 
     - name: Publish wheel package
