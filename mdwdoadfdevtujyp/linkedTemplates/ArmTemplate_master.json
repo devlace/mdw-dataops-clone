@@ -33,7 +33,7 @@
 		},
 		"Ls_AdlsGen2_01_properties_typeProperties_url": {
 			"type": "string",
-			"defaultValue": "https://mdwdostordevtujyp.dfs.core.windows.net"
+			"defaultValue": "https://mdwdostordevkdnam.dfs.core.windows.net"
 		},
 		"Ls_AzureSQLDW_01_properties_typeProperties_connectionString_secretName": {
 			"type": "string",
@@ -41,7 +41,7 @@
 		},
 		"Ls_KeyVault_01_properties_typeProperties_baseUrl": {
 			"type": "string",
-			"defaultValue": "https://mdwdokvdevtujyp.vault.azure.net/"
+			"defaultValue": "https://mdwdokvdevkdnam.vault.azure.net/"
 		},
 		"Ls_Rest_MelParkSensors_01_properties_typeProperties_url": {
 			"type": "string",

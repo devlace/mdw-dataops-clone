@@ -24,13 +24,13 @@
 			"value": "@concat(dataset().container, '/', dataset().infilefolder)"
 		},
 		"Ls_AdlsGen2_01_properties_typeProperties_url": {
-			"value": "https://mdwdostordevtujyp.dfs.core.windows.net"
+			"value": "https://mdwdostordevkdnam.dfs.core.windows.net"
 		},
 		"Ls_AzureSQLDW_01_properties_typeProperties_connectionString_secretName": {
 			"value": "sqldwConnectionString"
 		},
 		"Ls_KeyVault_01_properties_typeProperties_baseUrl": {
-			"value": "https://mdwdokvdevtujyp.vault.azure.net/"
+			"value": "https://mdwdokvdevkdnam.vault.azure.net/"
 		},
 		"Ls_Rest_MelParkSensors_01_properties_typeProperties_url": {
 			"value": "https://data.melbourne.vic.gov.au/resource/"
