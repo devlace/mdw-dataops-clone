@@ -1,5 +1,5 @@
 
-name: ci-qa-python
+name: ci-artifacts
 
 on:
   repository_dispatch:
@@ -36,3 +36,9 @@ jobs:
       env:
         PACKAGE_VERSION: $(python-package-major-version).$(python-package-minor-version).$(python-package-patch-version)
       run: make dist
+
+    - name: Publish wheel package
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: ${{ env.working-directory }}/dist/
