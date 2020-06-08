@@ -17,7 +17,7 @@ jobs:
       matrix:
         python-version: [3.5, 3.6, 3.7, 3.8]
     env:
-      working-directory: './e2e_samples/parking_sensors/src'
+      working-directory: './e2e_samples/parking_sensors/src/ddo_transform'
     steps:
     - uses: actions/checkout@v2
       with:
@@ -35,6 +35,6 @@ jobs:
         if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Run lint tests
+    - name: Run lint and tests
       working-directory: ${{ env.working-directory }}
       run: make lint && make tests
