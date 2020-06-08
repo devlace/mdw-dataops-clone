@@ -5,8 +5,8 @@ name: CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  watch:
-    types: [started]
+  repository_dispatch:
+    types: [ondemand]
 #   push:
 #     branches: [ lace/github-actions ]
 #   pull_request:
