@@ -7,8 +7,8 @@ name: CI-ondemand
 on:
   repository_dispatch:
     types: [ondemand]
-#   push:
-#     branches: [ lace/github-actions ]
+  push:
+    branches: [ devlace-patch-1 ]
 #   pull_request:
 #     branches: [ lace/github-actions ]
   
