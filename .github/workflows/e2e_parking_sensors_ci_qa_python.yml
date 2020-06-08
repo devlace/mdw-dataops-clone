@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [2.7, 3.5, 3.6, 3.7, 3.8]
+        python-version: [3.5, 3.6, 3.7, 3.8]
     env:
       working-directory: './e2e_samples/parking_sensors/src'
     steps:
@@ -34,3 +34,7 @@ jobs:
         python -m pip install --upgrade pip
         if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+    - name: Run lint tests
+      working-directory: ${{ env.working-directory }}
+      run: make lint && make tests
