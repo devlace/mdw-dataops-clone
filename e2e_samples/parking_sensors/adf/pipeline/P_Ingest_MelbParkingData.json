@@ -1,7 +1,7 @@
 {
 	"name": "P_Ingest_MelbParkingData",
 	"properties": {
-		"description": "Hello!",
+		"description": "Hello NDC Oslo!!!",
 		"activities": [
 			{
 				"name": "StandardizeData",
