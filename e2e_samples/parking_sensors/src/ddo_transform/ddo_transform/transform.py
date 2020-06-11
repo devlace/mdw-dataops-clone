@@ -307,6 +307,7 @@ def process_fact_parking(sensordata_sdf: DataFrame,
 
 
 if __name__ == "__main__":
+    # DEMO changes :)
     from pyspark.sql import SparkSession
     import datetime
     import os
