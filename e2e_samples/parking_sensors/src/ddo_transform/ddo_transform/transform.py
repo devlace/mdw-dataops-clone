@@ -307,7 +307,7 @@ def process_fact_parking(sensordata_sdf: DataFrame,
 
 
 if __name__ == "__main__":
-    # DEMO changes :)
+    # NDC DEMO!!
     from pyspark.sql import SparkSession
     import datetime
     import os
@@ -381,5 +381,4 @@ if __name__ == "__main__":
     # _inspect_df(_run_process_dim_location())
     # _inspect_df(_run_process_dim_st_marker())
     _inspect_df(_run_process_fact_parking())
-
     print("done!")
