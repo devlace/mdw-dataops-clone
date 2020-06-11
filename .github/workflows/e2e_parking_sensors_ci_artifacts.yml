@@ -1,44 +1,55 @@
 
-name: ci-artifacts
+# name: ci-artifacts
 
-on:
-  repository_dispatch:
-    types: [ ondemand ]
-  push:
-    branches: [ master ]
+# on:
+#   repository_dispatch:
+#     types: [ ondemand ]
+#   push:
+#     branches: [ master ]
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      working-directory: './e2e_samples/parking_sensors/src/ddo_transform'
-      python-version: 3.8
-      python-package-major-version: 0
-      python-package-minor-version: 0
-      python-package-patch-version: ${{ github.run_id }}
-    steps:
-    - uses: actions/checkout@v2
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     env:
+#       working-directory: './e2e_samples/parking_sensors/src/ddo_transform'
+#       python-version: 3.8
+#       python-package-major-version: 0
+#       python-package-minor-version: 0
+#       python-package-patch-version: ${{ github.run_id }}
+#     steps:
+#     - uses: actions/checkout@v2
 
-    - name: Set up Python ${{ env.python-version }}
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{ env.python-version }}
+#     - name: Set up Python ${{ env.python-version }}
+#       uses: actions/setup-python@v2
+#       with:
+#         python-version: ${{ env.python-version }}
 
-    - name: Install dependencies
-      working-directory: ${{ env.working-directory }}
-      run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+#     - name: Install dependencies
+#       working-directory: ${{ env.working-directory }}
+#       run: |
+#         python -m pip install --upgrade pip
+#         if [ -f requirements_dev.txt ]; then pip install -r requirements_dev.txt; fi
+#         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-    - name: Create wheel package
-      working-directory: ${{ env.working-directory }}
-      env:
-        PACKAGE_VERSION: ${{ python-package-major-version }}.${{ python-package-minor-version }}.${{ python-package-patch-version }}
-      run: make dist
+#     - name: Create wheel package
+#       working-directory: ${{ env.working-directory }}
+#       env:
+#         PACKAGE_VERSION: ${{ python-package-major-version }}.${{ python-package-minor-version }}.${{ python-package-patch-version }}
+#       run: make dist
 
-    - name: Publish wheel package
-      uses: actions/upload-artifact@v2
-      with:
-        name: dist
-        path: ${{ env.working-directory }}/dist/
+#     - name: Publish wheel package
+#       uses: actions/upload-artifact@v2
+#       with:
+#         name: dist
+#         path: ${{ env.working-directory }}/dist/
+
+#   release:
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: Upload package
+#       run: |
+#         pip install databricks-cli
+#         databricks fs cp <path to artifact> <path to dbfs>
+#       env:
+#         DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN }}
+#         DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST }}
