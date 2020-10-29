@@ -229,7 +229,7 @@
 			"type": "Microsoft.DataFactory/factories/pipelines",
 			"apiVersion": "2018-06-01",
 			"properties": {
-				"description": "Hello Data Engineers!!!",
+				"description": "Hi NZ!!",
 				"activities": [
 					{
 						"name": "StandardizeData",
@@ -507,7 +507,7 @@
 			"apiVersion": "2018-06-01",
 			"properties": {
 				"annotations": [],
-				"runtimeState": "Started",
+				"runtimeState": "Stopped",
 				"pipelines": [
 					{
 						"pipelineReference": {
